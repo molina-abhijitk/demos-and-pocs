@@ -6,7 +6,8 @@
     <title>External Survey Test Website</title>
     
     <!-- Optional: Embed standard SLDS styles to make the LWC render nicely -->
-    <link rel="stylesheet" href="https://molina5--mo5dev2pro.sandbox.lightning.force.com/survey/sfsites/c/resource/SLDS/assets/styles/salesforce-lightning-design-system.min.css" />
+    <!-- Load SLDS directly from an external CDN for reliable public styling -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/design-system/2.24.2/styles/salesforce-lightning-design-system.min.css%22 integrity="sha512-VbIe1Fh3oJmI6O9b+mfeYV7DbyG87f3jZ20lS8AFr/104S6lB6Vv4q7VpXqW7E6R4gN0/M8Y40Yt3bZ2l6bKsw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <style>
         body {
@@ -37,7 +38,7 @@
 
     <!-- 2. Load the Lightning Out Javascript from your Salesforce Public Site -->
     <!-- REPLACE 'your-domain.my.site.com/survey' with your actual public site domain and path -->
-    <script src="https://molina5--mo5dev2pro.sandbox.lightning.force.com/survey/lightning/lightning.out.js"></script>
+    <script src="https://molina5--mo5dev2pro.sandbox.my.salesforce-sites.com/lightning/lightning.out.js"></script>
 
     <!-- 3. Initialize and Inject the Component -->
     <script>
