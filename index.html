@@ -83,8 +83,11 @@
             console.log("Captured 'surveysubmitted' event in index.html. Detail:", event.detail);
             // Show the HTML thank you box
             document.getElementById('parent-thanks-box').style.display = 'block';
-            // Hide the intro header, message, and horizontal rule
-            document.getElementById('survey-intro').style. Display = 'none';
+            // 2. Hide the intro container (title, text, and separator line)
+            var introSection = document.getElementById('survey-intro');
+            if (introSection) {
+                introSection.style.setProperty('display', 'none', 'important');
+            }
         });
     </script>
 </body>
