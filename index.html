@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>External Survey Test Website</title>
+    
+    <!-- Optional: Embed standard SLDS styles to make the LWC render nicely -->
+    <link rel="stylesheet" href="https://your-domain.my.site.com/survey/sfsites/c/resource/SLDS/assets/styles/salesforce-lightning-design-system.min.css" />
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            padding: 50px 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Welcome to Partner Portal</h1>
+        <p>Please fill out our quick survey below. Your account number has been securely linked.</p>
+        <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
+        
+        <!-- 1. The target container where the Salesforce LWC will render -->
+        <div id="survey-form-container"></div>
+    </div>
+
+    <!-- 2. Load the Lightning Out Javascript from your Salesforce Public Site -->
+    <!-- REPLACE 'your-domain.my.site.com/survey' with your actual public site domain and path -->
+    <script src="https://your-domain.my.site.com/survey/lightning/lightning.out.js"></script>
+
+    <!-- 3. Initialize and Inject the Component -->
+    <script>
+        var siteEndpoint = "https://your-domain.my.site.com/survey"; // REPLACE ME
+        
+        // Simulating the hidden AccountNumber parameter set by this hosting website 
+        var currentUsersAccountNumber = "ACC-987654321"; 
+
+        $Lightning.use("c:surveyBridgeApp", function() {
+            $Lightning.createComponent(
+                "c:surveyForm",
+                { 
+                    accountNumber: currentUsersAccountNumber 
+                },
+                "survey-form-container",
+                function(cmp) {
+                    console.log("Survey LWC loaded successfully on GitHub Pages!");
+                }
+            );
+        }, siteEndpoint); 
+    </script>
+</body>
+</html>
