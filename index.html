@@ -44,9 +44,11 @@
                     🎉 Website Message: We have successfully saved your feedback to your account! Thank you for participating.
         </div>
         
-        <h1>Welcome to Survey Portal</h1>
-        <p>Please fill out our quick survey below. Your account number has been securely linked.</p>
-        <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
+        <div id="survey-intro">
+            <h1>Welcome to Partner Portal</h1>
+            <p>Please fill out our quick survey below.</p>
+            <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
+        </div>
         
         <!-- 1. The target container where the Salesforce LWC will render -->
         <div id="survey-form-container"></div>
@@ -81,6 +83,8 @@
             console.log("Captured 'surveysubmitted' event in index.html. Detail:", event.detail);
             // Show the HTML thank you box
             document.getElementById('parent-thanks-box').style.display = 'block';
+            // Hide the intro header, message, and horizontal rule
+            document.getElementById('survey-intro').style. Display = 'none';
         });
     </script>
 </body>
